@@ -26,6 +26,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_theme = 'alabaster'
 html_static_path = ['_static']
 
+import os
+
 html_context = {
-    "to_be_indexed": ["stable", "latest"]
+    "to_be_indexed": ["stable", "latest"],
+    "version_slug": os.environ.get('READTHEDOCS_VERSION') or ''
 }
